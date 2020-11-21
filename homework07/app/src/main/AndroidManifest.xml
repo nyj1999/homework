@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.homework07">
+    <!-- 在SDCard中创建与删除文件权限 -->
+    <permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAG" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name="com.example.homework07.MainApplication"
+        android:name=".MainApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,20 +16,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.example.homework07.ShoppingChannelActivity"
+            android:name=".LaunchSimpleActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.homework07.ShoppingCartProActivity"
+            android:name=".ShoppingChannelActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.homework07.ShoppingDetailActivity"
+            android:name=".ShoppingCartProActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ShoppingDetailActivity"
             android:theme="@style/AppBaseTheme" />
         <activity
-            android:name="com.example.homework07.ShoppingCartActivity"
+            android:name=".ShoppingCartActivity"
             android:exported="true"
             android:theme="@style/AppBaseTheme" />
         <activity
-            android:name="com.example.homework07.MainActivity"
+            android:name=".MainActivity"
             android:theme="@style/AppBaseTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,11 +40,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application> <!-- 在SDCard中创建与删除文件权限 -->
-    <permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAG" />
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    </application>
 
 </manifest>
